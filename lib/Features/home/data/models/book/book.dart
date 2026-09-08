@@ -27,7 +27,7 @@ class Book extends BookEntity {
   }) : super(
          title: volumeInfo!.title!,
          image: volumeInfo.imageLinks?.thumbnail ?? '',
-         authorName: 'UnKnown Author',
+         authorName: volumeInfo.authors?.first ?? 'No Author',
          price: 0.0,
          rating: 0.0,
          entityId: id!,
