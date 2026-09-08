@@ -4,7 +4,7 @@ import 'package:bookly/Features/home/domain/entities/book_entity.dart';
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/functions/save_books_local.dart';
 import 'package:bookly/core/utils/api_sevices.dart';
-import 'package:hive/hive.dart';
+// import 'package:hive/hive.dart';
 
 abstract class HomeRemoteDataSource {
   Future<List<BookEntity>> fetchFeaturedBooks();
@@ -40,8 +40,8 @@ class HomeRemoteDataSourceImplementation extends HomeRemoteDataSource {
     for (var book in data['items']) {
       books.add(Book.fromJson(book));
     }
+    saveBooksLocal(books, kNewestBox);
+
     return books;
   }
-
-
 }
