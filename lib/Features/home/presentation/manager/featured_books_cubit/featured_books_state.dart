@@ -1,8 +1,7 @@
-// part of 'featured_books_cubit.dart';
+part of 'featured_books_cubit.dart';
 
 // import '../../../domain/entities/book_entity.dart';
 
-import 'package:bookly/Features/home/domain/entities/book_entity.dart';
 
 abstract class FeaturedBooksState  {}
 
