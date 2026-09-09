@@ -27,7 +27,7 @@ class HomeRepoImplementation extends HomeRepo {
       }
       books = await homeRemoteDataSource.fetchFeaturedBooks();
       return right(books);
-    } on Exception catch (e) {
+    } catch (e) {
       if (e is DioException) {
         return left(ServerFailure.fromDioError(e));
       }
@@ -46,7 +46,7 @@ class HomeRepoImplementation extends HomeRepo {
       }
       books = await homeRemoteDataSource.fetchNewestBooks();
       return right(books);
-    } on Exception catch (e) {
+    } catch (e) {
       if (e is DioException) {
         return left(ServerFailure.fromDioError(e));
       }
