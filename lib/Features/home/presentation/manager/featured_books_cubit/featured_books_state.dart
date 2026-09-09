@@ -4,9 +4,7 @@
 
 import 'package:bookly/Features/home/domain/entities/book_entity.dart';
 
-abstract class FeaturedBooksState  {
-  
-}
+abstract class FeaturedBooksState  {}
 
 class FeaturedBooksInitial extends FeaturedBooksState {}
 
