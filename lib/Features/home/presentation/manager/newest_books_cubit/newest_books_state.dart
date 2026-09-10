@@ -1,15 +1,17 @@
 part of 'newest_books_cubit.dart';
 
+abstract class NewestBooksState {}
 
-sealed class NewestBooksState {}
+class NewestBooksInitial extends NewestBooksState {}
 
-final class NewestBooksInitial extends NewestBooksState {}
-final class NewestBooksLoading extends NewestBooksState {}
-final class NewestBooksSuccess extends NewestBooksState {
+class NewestBooksLoading extends NewestBooksState {}
+
+class NewestBooksSuccess extends NewestBooksState {
   final List<BookEntity> books;
   NewestBooksSuccess(this.books);
 }
-final class NewestBooksError extends NewestBooksState {
+
+class NewestBooksError extends NewestBooksState {
   final String errorMessage;
   NewestBooksError(this.errorMessage);
 }
