@@ -1,3 +1,4 @@
+import 'package:bookly/Features/home/domain/entities/book_entity.dart';
 import 'package:bookly/Features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/featured_list_view.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,8 @@ class FeaturedBooksListViewBlocBuilder extends StatelessWidget {
         } else if (state is FeaturedBooksError) {
           return Center(child: Text(state.errorMessage));
         } else if (state is FeaturedBooksSuccess) {
-          return FeaturedBooksListView();
+          final List<BookEntity> books = state.books;
+          return FeaturedBooksListView(books: books);
         } else {
           return const Center(child: CircularProgressIndicator());
         }
