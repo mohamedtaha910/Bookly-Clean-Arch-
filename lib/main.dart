@@ -8,18 +8,13 @@ import 'package:bookly/Features/home/presentation/manager/featured_books_cubit/f
 import 'package:bookly/Features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/functions/setup_service_locator.dart';
-// import 'package:bookly/core/utils/api_sevices.dart';
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/simple_bloc_observer.dart';
-// import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'package:get_it/get_it.dart';
-// import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/adapters.dart';
 
-// import 'Features/Splash/presentation/views/splash_view.dart';
 
 void main() async {
   setupServiceLocator();
@@ -46,7 +41,7 @@ class Bookly extends StatelessWidget {
             FetchFeaturedBooksUseCase(
               homeRepo: getIt.get<HomeRepoImplementation>(),
             ),
-          ),
+          )..fetchFeaturedBooks(),
         ),
         BlocProvider(
           create: (context) => NewestBooksCubit(
